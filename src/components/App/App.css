@@ -1,0 +1,213 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.App{
+  position: relative;
+  background-color: #283E51;
+/*height: 100vh;*/
+}
+
+.canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #4B79A1;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #283E51, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #283E51, #0A2342); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -olinear-gradient(to top, #283E51, #0A2342);
+  /*z-index: -1;*/
+}
+
+.landing-container {
+  /*background-color: grey;*/
+
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /*background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;*/
+  /*height: 100%;*/
+  /*background-size: cover;*/
+}
+
+.landing-content-container {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  /*background-color: green;*/
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.name {
+  text-align: center;
+  font-family: 'Alfa Slab One', cursive;
+  font-weight: 300;
+  font-size: 5em;
+  margin: 0 auto;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+
+.arrow{
+  position: absolute;
+  left:50%;
+  top:90%;
+  transform: translateX(-20px);
+  width: 0;
+height: 0;
+border-left: 20px solid transparent;
+border-right: 20px solid transparent;
+
+border-top: 20px solid white;
+}
+
+@keyframes wobble {
+  from {
+    transform: none;
+  }
+
+  15% {
+    transform: translateY(10%)
+  }
+
+  30% {
+    transform: translateY(20%)
+  }
+
+  45% {
+    transform: translateY(30%)
+  }
+
+  60% {
+    transform: translateY(-20%)
+  }
+
+  75% {
+    transform: translateY(-10%)
+  }
+
+  90% {
+    transform: translateY(-5%)
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.wobble {
+  animation-name: wobble;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+.down-animate {
+  -moz-animation: going-down 200s linear infinite;
+-ms-animation:going-down 200s linear infinite;
+-o-animation:going-down 200s linear infinite;
+-webkit-animation:going-down 200s linear infinite;
+animation:going-down 200s linear infinite;
+}
+
+.content-container {
+  z-index: 2;
+  margin: 0 auto;
+  width: 80%;
+  /*height: 100vh;*/
+  background-color: white;
+  padding: 50px;
+  /*padding-bottom: 0;*/
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+}
+
+.header {
+  font-family: 'Bad Script', cursive;
+  text-align: center;
+  /*height: 50px;*/
+  margin-bottom: 30px;
+  margin-top: 0;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.project-container {
+  z-index: 2;
+
+  margin-bottom: 5%;
+}
+
+.project-title {
+  background-color: #6388FF;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 5px;
+  text-align: center;
+}
+
+.project-description {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.icon-for-dev {
+  font-size: 300%;
+  margin-bottom: 8%;
+  margin-left: 10%;
+  display: inline-block;
+}
+
+.project-image{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-size: contain;*/
+  background-position: top;
+  border-radius: 5px;
+  display: block;
+}
+
+#project1-image {
+  background-image: url(../../Assets/Zombie4.png);
+}
+
+#project2-image {
+  background-image: url(../../Assets/Zombie4.png);
+}
+
+#project3-image {
+  background-image: url(../../Assets/Zombie4.png);
+}
+
+#project4-image {
+  background-image: url(../../Assets/Zombie4.png);
+}
+
+/*@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}*/

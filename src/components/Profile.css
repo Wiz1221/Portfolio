@@ -1,0 +1,58 @@
+
+.profile-container{
+  z-index: 2;
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 100vh;
+  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  /*padding-top: 100px;*/
+  border-bottom-left-radius: 3%;
+  border-bottom-right-radius: 3%;
+}
+
+ul {
+  list-style: none;
+  display: table;
+  /*background-color: red;*/
+  width: 100%;
+}
+
+li {
+  display: table-cell;
+  /*float: left;*/
+
+  /*border: 1px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;*/
+  margin-right: 5%;
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+}
+
+.profile-description {
+  width: 40%;
+}
+
+.profile-description-header {
+  font-family: 'Alfa Slab One', cursive;
+  background-color: #FFE84D;
+  font-size: 1.5em;
+  width: auto;
+  display: inline-block;
+  /*padding-top: 5px;
+  padding-bottom: 5px;*/
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.profile-description-content {
+  width: 100%;
+}
