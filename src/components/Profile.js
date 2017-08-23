@@ -10,7 +10,7 @@ class Profile extends Component{
       <div className="profile-container">
         <h2 className="header">About Me</h2>
         <div className="col-sm-12 col-md-3 col-lg-4">
-          <img src={ProfilePic} className="profile-image"/>
+          <img src={ProfilePic} alt="Geok Yan" className="profile-image"/>
         </div>
         <div className="profile-description col-sm-12 col-md-8 col-lg-8">
           <div className="profile-description-header">
@@ -18,7 +18,7 @@ class Profile extends Component{
           </div>
           <p className="profile-description-content">
             <br></br>
-            I'm Geok Yan, a Web Developer.
+            I'm Geok Yan, a full stack Web Developer.
             <br></br>
             <br></br>
             As a ex-Mathematics teacher, I have found affinity in Web Development,
@@ -36,18 +36,18 @@ class Profile extends Component{
           <p>Find me at : </p>
           <ul>
             <li>
-              <a className="icon" href="https://www.linkedin.com/in/geok-yan-pek-44574a82/" target="_blank">
-                <i className="fa fa-linkedin fa-2x"></i>
+              <a className="icon" href="https://www.linkedin.com/in/geok-yan-pek/" target="_blank" rel="noopener noreferrer">
+                <i className="fa fa-linkedin fa-2x icon-each"></i>
               </a>
             </li>
             <li>
-              <a className="icon" href="https://github.com/Wiz1221" target="_blank">
-                <i className="fa fa-github fa-2x"></i>
+              <a className="icon" href="https://github.com/Wiz1221" target="_blank" rel="noopener noreferrer">
+                <i className="fa fa-github fa-2x icon-each"></i>
               </a>
             </li>
             <li>
-              <a className="icon" href="#" target="_blank">
-                <i className="fa fa-file fa-2x"></i>
+              <a className="icon" href="mailto:geokyan89@gmail.com">
+                <i className="fa fa-envelope fa-2x icon-each"></i>
               </a>
             </li>
           </ul>

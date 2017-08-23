@@ -4,13 +4,14 @@
   position: relative;
   margin: 0 auto;
   width: 80%;
-  height: 100vh;
+  /*height: 100vh;*/
+  overflow: auto;
   background-color: white;
   padding-left: 50px;
   padding-right: 50px;
   /*padding-top: 100px;*/
-  border-bottom-left-radius: 3%;
-  border-bottom-right-radius: 3%;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
 
 ul {
@@ -38,7 +39,9 @@ li {
 }
 
 .profile-description {
-  width: 40%;
+  /*width: 40%;*/
+  height: 120%;
+  margin-bottom: 20px;
 }
 
 .profile-description-header {
@@ -55,4 +58,10 @@ li {
 
 .profile-description-content {
   width: 100%;
+}
+
+.icon-each:hover {
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
 }

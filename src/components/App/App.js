@@ -14,13 +14,18 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      projectClicked: false,
-      whichProjectClicked: 0,
+      intervalId:0,
+      style: {
+        height: 100+"vh",
+        width: 100+"vw"
+      },
       projectInfo: [
         {
           title: "Survive Zombie World",
           image: ZombieImage,
           icons: ["devicon-javascript-plain", "devicon-html5-plain-wordmark", "devicon-css3-plain-wordmark"],
+          stack: "HTML5, CSS3, Javascript",
+          deployment: "Github",
           description: "This is a turn-based strategy game, where users have to explore the map, discover the story hidden behind and kill/avoid Zombies. Players have to strategize their movements and hide in houses in time before a dark veil covers the screen during specific turns.",
           links: {
             github: "https://github.com/Wiz1221/Survive-Zombie-World",
@@ -30,25 +35,33 @@ class App extends Component {
           title: "MathWars",
           image: MathWarsImage,
           icons: ["devicon-nodejs-plain-wordmark", "devicon-express-original-wordmark", "devicon-mongodb-plain-wordmark", "devicon-jquery-plain-wordmark"],
-          description: "MathWars is a question and answer forum site. The special part is that users can choose to input Math Symbols, simpily by pressing a button.",
+          stack: "NodeJS, Express, MongoDB, jQuery, MathJax.",
+          deployment: "Heroku",
+          description: "MathWars is a question and answer forum site. Users input Math symobl by simply pressing a button. Questions will be stored in database and rendered to Math form using MathJax. Users can also manage their own questions and answers.",
           links: {
             github: "https://github.com/Wiz1221/Mathwars",
-            site: "https://pure-ridge-10154.herokuapp.com/"
+            site: "https://mathwars.herokuapp.com/"
           }
         },{
+          marginBottom: 10,
           title: "Food-Awesome",
           image: FoodAwesomeImage,
+
           icons: ["devicon-react-original-wordmark", "devicon-nodejs-plain-wordmark", "devicon-mongodb-plain-wordmark", "devicon-amazonwebservices-plain-wordmark"],
-          description: "Food-Awesome is a food review site. The Administrator can add restraurants and users add and manage their reviews",
+          stack: "MongoDB, Express, ReactJS, NodeJS, Redux.",
+          deployment: "Amazon Web Services (AWS - EC2)",
+          description: "Our first try in ReactJS, Food-Awesome is a food review site. The Administrator can add restraurants and users add and manage their reviews on those restraurants.",
           links: {
             github: "https://github.com/dheamariesta/food-awesome",
-            site: "http://35.167.239.209:3001/"
+            site: "http://food-awesome.review"
           }
         },{
           title: "ClinicQueueSG",
           image: ClinicQueueImage,
           icons: ["devicon-react-original-wordmark", "devicon-nodejs-plain-wordmark", "devicon-mongodb-plain-wordmark", "devicon-amazonwebservices-plain-wordmark"],
-          description: "A one-stop site to see real-time live queue situation for over 900 clinics in Singapore",
+          stack: "MongoDB, Express, ReactJS, NodeJS, Redux, Socket.io, Google-map-react, Twilio.",
+          deployment: "Amazon Web Services (AWS - EC2)",
+          description: "A one-stop site to see real-time live queue situation for over 900 clinics in Singapore. Instead of clicking 17 times to see information of all clinics from the various polyclinic groups, such as NHG and SingHealth, our site allow users to simply hover over the icons on the map to see queue info. Users can also post pictures and comment on the current queue in each clinic or choose to subscribe to a clinic and receive a SMS when the clinic have updates on latest queue situation.",
           links: {
             github: "https://github.com/Wiz1221/ClinicQueue-redux-frontend",
             site: "https://clinicq.sg"
@@ -68,27 +81,43 @@ class App extends Component {
                           icons={elem.icons}
                           description={elem.description}
                           links={elem.links}
-                          whichProjectClicked={this.whichProjectClicked} />
+                          stack={elem.stack}
+                          deployment={elem.deployment}
+                          marginBottom={elem.marginBottom} />
       )
     })
   }
 
 
+  scrollStep = () => {
+    let windowHeight = window.innerHeight
+    // window.scrollY returns the number of pixels that the document is currently scrolled vertically.
+    if (window.scrollY >= windowHeight) {
+        clearInterval(this.state.intervalId);
+    }
+    window.scroll(0, window.scrollY + 20);
+  }
+
+  scrollToTop = () => {
+    let intervalId = setInterval(this.scrollStep.bind(this), 16.66);
+    this.setState({ intervalId: intervalId });
+  }
+
+
   render() {
     const projectArray = this.renderEachProject()
-    const style = {
-      height: 100+"vh",
-      width: 100+"vw"
-    }
+
     return (
       <div className="App">
-        <canvas className="canvas" style={style}></canvas>
+        <canvas id="canvas" style={this.state.style}></canvas>
         <div className="landing-container">
           <div className="landing-content-container">
             <h1 className="name">Pek Geok Yan</h1>
-            <h3 className="title">Web Developer</h3>
+            <h3 className="title">Full Stack Developer</h3>
           </div>
-          <div className="arrow animated infinite wobble"></div>
+
+            <div className="arrow animated infinite wobble" onClick={ () => { this.scrollToTop(); }}></div>
+
         </div>
         <div className="content-container">
           <h3 className="header">Recent Projects</h3>
@@ -98,125 +127,6 @@ class App extends Component {
       </div>
     );
   }
-
-  // componentDidMount(){
-  //   var canvas = document.getElementsByClassName('canvas');
-  //   var context;
-  //   var screenH;
-  //   var screenW;
-  //   var stars = [];
-  //   var fps = 50;
-  //   var colors = ["rgba(255, 255, 255,", "rgba(255, 227, 77,", "rgba(99, 136, 255,"]
-  //   var numStars = 400;
-  //
-  //     // Calculate the screen size
-  //   	screenH = window.innerHeight;
-  //   	screenW = window.innerWidth;
-  //
-  //     //
-  //   	// // Fill out the canvas
-  //   	// canvas.attr('height', screenH);
-  //   	// canvas.attr('width', screenW);
-  //   	context = canvas[0].getContext('2d');
-  //
-  //   	// Create all the stars
-  //   	for(var i = 0; i < numStars; i++) {
-  //   		var x = Math.round(Math.random() * screenW);
-  //   		var y = Math.round(Math.random() * screenH);
-  //   		var length = 1 + Math.random() * 2;
-  //   		var opacity = Math.random();
-  //       var whichColor = Math.floor(Math.random() * 3);
-  //
-  //   		// Create a new star and draw
-  //   		var star = new Star(x, y, length, opacity, colors[whichColor]);
-  //
-  //   		// Add the the stars array
-  //   		stars.push(star);
-  //   	}
-  //
-  //   	setInterval(animate, 1000 / fps);
-  //
-  //   /**
-  //    * Animate the canvas
-  //    */
-  //   function animate() {
-  //   	context.clearRect(0, 0, screenW, screenH);
-  //   	stars.forEach((star,index) => {
-  //   		star.draw(context);
-  //   	})
-  //   }
-  //
-  //   /**
-  //    * Star
-  //    *
-  //    * @param int x
-  //    * @param int y
-  //    * @param int length
-  //    * @param opacity
-  //    */
-  //   function Star(x, y, length, opacity, color) {
-  //   	this.x = parseInt(x);
-  //   	this.y = parseInt(y);
-  //   	this.length = parseInt(length);
-  //   	this.opacity = opacity;
-  //   	this.factor = 1;
-  //   	this.increment = Math.random() * .03;
-  //     this.color = color;
-  //   }
-  //
-  //   /**
-  //    * Draw a star
-  //    *
-  //    * This function draws a start.
-  //    * You need to give the contaxt as a parameter
-  //    *
-  //    * @param context
-  //    */
-  //   Star.prototype.draw = function() {
-  //   	// context.rotate((Math.PI * 1 / 10));
-  //
-  //   	// Save the context
-  //   	context.save();
-  //
-  //   	// move into the middle of the canvas, just to make room
-  //   	context.translate(this.x, this.y);
-  //
-  //   	// Change the opacity
-  //   	if(this.opacity > 1) {
-  //   		this.factor = -1;
-  //   	}
-  //   	else if(this.opacity <= 0) {
-  //   		this.factor = 1;
-  //
-  //   		this.x = Math.round(Math.random() * screenW);
-  //   		this.y = Math.round(Math.random() * screenH);
-  //   	}
-  //
-  //   	this.opacity += this.increment * this.factor;
-  //
-  //   	context.beginPath()
-  //   	for (var i = 5; i--;) {
-  //   		context.lineTo(0, this.length);
-  //   		context.translate(0, this.length);
-  //   		context.rotate((Math.PI * 2 / 10));
-  //   		context.lineTo(0, - this.length);
-  //   		context.translate(0, - this.length);
-  //   		context.rotate(-(Math.PI * 6 / 10));
-  //   	}
-  //   	context.lineTo(0, this.length);
-  //   	context.closePath();
-  //
-  //   	// context.fillStyle = "rgba(255, 255, 200, " + this.opacity + ")";
-  //     context.fillStyle = this.color + this.opacity + ")";
-  //   	context.shadowBlur = 5;
-  //   	context.shadowColor = this.color;
-  //
-  //   	context.fill();
-  //
-  //   	context.restore();
-  // }
-
-// }
 }
 
 export default App;
