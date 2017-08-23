@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import './background.css';
+import './animation.css';
 
 import Profile from '../Profile';
 import ProjectContainer from '../ProjectContainer';
