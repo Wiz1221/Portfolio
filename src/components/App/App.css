@@ -47,6 +47,7 @@ html, body{
   display: inline-block;
   /*background-color: green;*/
   -webkit-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
       -ms-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
 }
@@ -144,7 +145,7 @@ border-top-right-radius: 1em;*/
   padding-right: 20px;
   margin-bottom: 20px;;
   color: white;
-  max-height: 520px;
+  /*max-height: 520px;*/
   border-radius: 1em;
 }
 
@@ -341,5 +342,11 @@ a.project-link:hover{
 @media only screen and (max-width:1032px) and (min-width:769px){
   .name{
     font-size: 3em;
+  }
+}
+
+@media only screen and (min-width:1032px) and (max-width:1350px){
+  .project-image{
+    max-width: 200px;
   }
 }

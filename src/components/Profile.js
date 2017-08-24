@@ -19,19 +19,14 @@ class Profile extends Component{
           </div>
           <p className="profile-description-content">
             <br></br>
-            I'm Geok Yan, a full stack Web Developer.
+            I'm Geok Yan, a Web Developer.
             <br></br>
             <br></br>
             As a ex-Mathematics teacher, I have found affinity in Web Development,
-            as it provides me with tools to make my ideas come to life. At the same time,
-            develop products that make a difference in the world.
+            as it provides me with tools to make my ideas come to life, which hopefully can make a difference in the world.
             <br></br>
             <br></br>
-            I enjoy exploring new technologies and loves to engage in challenging ideas.
-            <br></br>
-            <br></br>
-            In my free time, I like to play video games, read novels and teach Mathematics.
-            My dream is build an App that will make Mathematics fun and engaging.
+            I enjoy exploring new technologies and loves to engage in challenging ideas. And in my free time, I like to play video games, read novels and teach Mathematics.
           </p>
           <nav>
           <p>Find me at : </p>
