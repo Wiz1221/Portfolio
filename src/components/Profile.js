@@ -7,6 +7,7 @@ import './Profile.css'
 class Profile extends Component{
   render(){
     return(
+      <div className="profile-wrapper">
       <div className="profile-container">
         <h2 className="header">About Me</h2>
         <div className="col-sm-12 col-md-3 col-lg-4">
@@ -52,6 +53,7 @@ class Profile extends Component{
             </li>
           </ul>
           </nav>
+        </div>
         </div>
       </div>
     )

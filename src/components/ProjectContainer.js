@@ -8,19 +8,6 @@ class ProjectContainer extends Component{
     }
   }
 
-  renderIcons = () => {
-    let elementsToRender = []
-    this.props.icons.forEach((elem,index) => {
-      elementsToRender.push(
-                <i className={elem + " colored icon-for-dev"} key={index}></i>
-      )
-    })
-    return elementsToRender
-  }
-
-  onClick = () => {
-    this.props.whichProjectClicked(this.props.id)
-  }
 
   inlineStyle = (marginBottom) => {
     return{
@@ -29,23 +16,35 @@ class ProjectContainer extends Component{
   }
 
   render(){
-    const renderIcons = this.renderIcons();
+    // const renderIcons = this.renderIcons();
     return(
-      <div className="project-container col-lg-3 col-md-3 col-sm-6 col-xs-12" id="project">
-        <div className="project-image-container">
-          <img src={this.props.image} alt={this.props.title} className="project-image" style={this.props.marginBottom? this.inlineStyle(this.props.marginBottom):null}/>
-        </div>
-        <div className="project-right">
-          <div className="project-title">{this.props.title}</div>
-          <section className="project-rest">
-          <p className="project-description">{this.props.description}</p>
-          <p>Built with: {this.props.stack}</p>
-          <p>Deployed with: {this.props.deployment}</p>
-          <div className="project-links">
-            <a className="link-github button" href={this.props.links.github} target="_blank" rel="noopener noreferrer"> Github </a>
-            <a className="link-site button" href={this.props.links.site} target="_blank" rel="noopener noreferrer"> Live </a>
+      <div className="project-container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="project">
+        <div className="project-container-inner">
+          <div className="project-image-container">
+            <img src={this.props.image} alt={this.props.title} className="project-image" style={this.props.marginBottom? this.inlineStyle(this.props.marginBottom):null}/>
           </div>
-          </section>
+          <div className="project-right">
+            <div className="project-title">{this.props.title}</div>
+            <section className="project-rest">
+            <p className="project-description">{this.props.description}</p>
+            <p>Built with: {this.props.stack}</p>
+            <p>Deployed with: {this.props.deployment}</p>
+            <div className="project-links">
+              <a name="github" className="project-link link-github" href={this.props.links.github} target="_blank" rel="noopener noreferrer">
+                <div className="project-link-container-inner">
+                  <div className="project-link-logo"><i className="fa fa-github fa-2x"></i></div>
+                  <div className="button">Github</div>
+                </div>
+              </a>
+              <a name="site" className="project-link link-site" href={this.props.links.site} target="_blank" rel="noopener noreferrer">
+                <div className="project-link-container-inner">
+                  <div className="project-link-logo" ><i className="fa fa-arrow-circle-right fa-2x"></i></div>
+                  <div className="button">Live</div>
+                </div>
+              </a>
+            </div>
+            </section>
+          </div>
         </div>
       </div>
     )
@@ -78,3 +77,17 @@ export default ProjectContainer;
 //   </div>
 //   </section>
 // </div>
+
+// renderIcons = () => {
+//   let elementsToRender = []
+//   this.props.icons.forEach((elem,index) => {
+//     elementsToRender.push(
+//               <i className={elem + " colored icon-for-dev"} key={index}></i>
+//     )
+//   })
+//   return elementsToRender
+// }
+//
+// onClick = () => {
+//   this.props.whichProjectClicked(this.props.id)
+// }

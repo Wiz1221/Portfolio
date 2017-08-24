@@ -35,7 +35,7 @@ class App extends Component {
           title: "MathWars",
           image: MathWarsImage,
           icons: ["devicon-nodejs-plain-wordmark", "devicon-express-original-wordmark", "devicon-mongodb-plain-wordmark", "devicon-jquery-plain-wordmark"],
-          stack: "NodeJS, Express, MongoDB, jQuery, MathJax.",
+          stack: "NodeJS, Express, MongoDB, jQuery, AJAX, MathJax.",
           deployment: "Heroku",
           description: "MathWars is a question and answer forum site. Users input Math symobl by simply pressing a button. Questions will be stored in database and rendered to Math form using MathJax. Users can also manage their own questions and answers.",
           links: {
@@ -48,9 +48,9 @@ class App extends Component {
           image: FoodAwesomeImage,
 
           icons: ["devicon-react-original-wordmark", "devicon-nodejs-plain-wordmark", "devicon-mongodb-plain-wordmark", "devicon-amazonwebservices-plain-wordmark"],
-          stack: "MongoDB, Express, ReactJS, NodeJS, Redux.",
+          stack: "MongoDB, Express, ReactJS, NodeJS, Redux, AJAX.",
           deployment: "Amazon Web Services (AWS - EC2)",
-          description: "Our first try in ReactJS, Food-Awesome is a food review site. The Administrator can add restraurants and users add and manage their reviews on those restraurants.",
+          description: "A food review site built with MERN stack",
           links: {
             github: "https://github.com/dheamariesta/food-awesome",
             site: "http://food-awesome.review"
@@ -61,7 +61,7 @@ class App extends Component {
           icons: ["devicon-react-original-wordmark", "devicon-nodejs-plain-wordmark", "devicon-mongodb-plain-wordmark", "devicon-amazonwebservices-plain-wordmark"],
           stack: "MongoDB, Express, ReactJS, NodeJS, Redux, Socket.io, Google-map-react, Twilio.",
           deployment: "Amazon Web Services (AWS - EC2)",
-          description: "A one-stop site to see real-time live queue situation for over 900 clinics in Singapore. Instead of clicking 17 times to see information of all clinics from the various polyclinic groups, such as NHG and SingHealth, our site allow users to simply hover over the icons on the map to see queue info. Users can also post pictures and comment on the current queue in each clinic or choose to subscribe to a clinic and receive a SMS when the clinic have updates on latest queue situation.",
+          description: "One-stop site to see live queue situation for over 900 clinics in Singapore. Users can also post pictures of queue situation, write commeent and subscribe to a clinic for queue siuation updates",
           links: {
             github: "https://github.com/Wiz1221/ClinicQueue-redux-frontend",
             site: "https://clinicq.sg"
